@@ -350,8 +350,10 @@ CryptoJS.lib.Cipher || (function (undefined) {
             }
 
             // XOR blocks
-            for (var i = 0; i < blockSize; i++) {
-                words[offset + i] ^= block[i];
+            if (typeof block != 'undefined'){
+              for (var i = 0; i < blockSize; i++) {
+                  words[offset + i] ^= block[i];
+              }
             }
         }
 
